@@ -1,0 +1,2 @@
+200
+{'success': True, 'accessToken': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZTcwNDk3OWVkMjgwMDAxYjRiOWUzNiIsImlhdCI6MTcyNjQxNjAyNCwiZXhwIjoxNzI2NDE3MjI0fQ.c35flaPDuUsgcAEH-LDBpfYWsgP6_wd_M2tx4JV4qRI', 'refreshToken': 'a181e6dbb7f8fdbd46556465515a0e9c865fdaf22cdb92542783b0350c4d0353046c76fbb0de41ad', 'user': {'email': 'matthewtate@yandex.ru', 'name': 'uowens'}}

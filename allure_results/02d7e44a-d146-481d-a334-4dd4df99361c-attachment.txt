@@ -1,0 +1,2 @@
+200
+{'success': True, 'name': 'Люминесцентный space краторный бургер', 'order': {'number': 3675}}

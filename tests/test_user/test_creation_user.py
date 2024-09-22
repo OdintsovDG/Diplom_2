@@ -2,6 +2,8 @@ import requests
 import helpers
 import allure
 from data import *
+import logging
+logging.basicConfig(level=logging.INFO)
 
 
 class TestsCreationCourier:
@@ -16,7 +18,7 @@ class TestsCreationCourier:
         ), (
             f'Status code is {code_response}, body={body_response}'
         )
-        print(f'\n{code_response}, \n{body_response}')
+        logging.info(f'\n{code_response}, \n{body_response}')
 
     @allure.title('Проверка невозможности создания двух одинаковых пользователей. Email, пароль и имя идентичны.'
                   'Ручка /api/auth/register')
@@ -27,8 +29,8 @@ class TestsCreationCourier:
         ), (
             f'Status code is {response.status_code}, body={response.json()}'
         )
-        print(response.status_code)
-        print(response.json())
+        logging.info(response.status_code)
+        logging.info(response.json())
 
     @allure.title('Проверка невозможности создания пользователя. Не заполнено поле "password".'
                   'Ручка /api/auth/register')
@@ -40,5 +42,5 @@ class TestsCreationCourier:
         ), (
             f'Status code is {response.status_code}, body={response.json()}'
         )
-        print(response.status_code)
-        print(response.json())
+        logging.info(response.status_code)
+        logging.info(response.json())

@@ -2,6 +2,8 @@ import requests
 import helpers
 import allure
 from data import *
+import logging
+logging.basicConfig(level=logging.INFO)
 
 
 class TestLoginUser:
@@ -14,8 +16,8 @@ class TestLoginUser:
         assert code_response == 200 and 'accessToken' in body_response, (
             f'Status code is {code_response}, body={body_response}'
         )
-        print(code_response)
-        print(body_response)
+        logging.info(code_response)
+        logging.info(body_response)
 
     @allure.title('Проверка авторизации несуществующего пользователя. Все обязательные поля заполнены.'
                   'Ручка /api/auth/login')
@@ -27,5 +29,5 @@ class TestLoginUser:
         ), (
             f'Status code is {response.status_code}, body={response.json()}'
         )
-        print(response.status_code)
-        print(response.json())
+        logging.info(response.status_code)
+        logging.info(response.json())

@@ -2,6 +2,8 @@ import requests
 import helpers
 import allure
 from data import *
+import logging
+logging.basicConfig(level=logging.INFO)
 
 
 class TestChangingUserData:
@@ -16,8 +18,8 @@ class TestChangingUserData:
         assert response.status_code == 200 and response.json()['success'] is True, (
             f'Status code is {response.status_code}, body={response.json()}'
         )
-        print(response.status_code)
-        print(response.json())
+        logging.info(response.status_code)
+        logging.info(response.json())
 
     @allure.title('Проверка изменения email пользователя. Все обязательные поля заполнены корректно.'
                   'Ручка /api/auth/user')
@@ -29,8 +31,8 @@ class TestChangingUserData:
         assert response.status_code == 200 and response.json()['success'] is True, (
             f'Status code is {response.status_code}, body={response.json()}'
         )
-        print(response.status_code)
-        print(response.json())
+        logging.info(response.status_code)
+        logging.info(response.json())
 
     @allure.title('Проверка невозможности изменения email и имени пользователя без авторизации.'
                   'Все обязательные поля заполнены корректно. Ручка /api/auth/user')
@@ -41,5 +43,5 @@ class TestChangingUserData:
                 response.json() == Message.ERROR_SHOULD_BE_AUTHORIZATION), (
             f'Status code is {response.status_code}, body={response.json()}'
         )
-        print(response.status_code)
-        print(response.json())
+        logging.info(response.status_code)
+        logging.info(response.json())

@@ -1,6 +1,8 @@
 import requests
 import allure
 from data import *
+import logging
+logging.basicConfig(level=logging.INFO)
 
 
 class TestReceivingUserOrders:
@@ -14,8 +16,8 @@ class TestReceivingUserOrders:
         assert response.status_code == 200 and response.json()['success'] is True, (
             f'Status code is {response.status_code}, body={response.json()}'
         )
-        print(response.status_code)
-        print(response.json())
+        logging.info(response.status_code)
+        logging.info(response.json())
 
     @allure.title('Проверка невозможности получения заказов конкретного пользователя.'
                   'Пользователь не авторизован, данные ингредиентов корректны.'
@@ -25,5 +27,5 @@ class TestReceivingUserOrders:
         assert response.status_code == 401 and response.json() == Message.ERROR_SHOULD_BE_AUTHORIZATION, (
             f'Status code is {response.status_code}, body={response.json()}'
         )
-        print(response.status_code)
-        print(response.json())
+        logging.info(response.status_code)
+        logging.info(response.json())

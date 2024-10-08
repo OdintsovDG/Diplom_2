@@ -1,0 +1,2 @@
+200
+{'success': True, 'user': {'email': 'shaunjohnson@yandex.ru', 'name': 'gateslinda'}}

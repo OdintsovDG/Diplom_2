@@ -1,0 +1,2 @@
+400
+{'success': False, 'message': 'Ingredient ids must be provided'}
